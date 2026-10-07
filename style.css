@@ -1,0 +1,1278 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #080909;
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+:root {
+    --black: #080909;
+    --dark: #0d0f0f;
+    --card: #121515;
+    --line: rgba(255, 255, 255, 0.10);
+    --muted: #929797;
+    --white: #f5f5f2;
+    --accent: #d6ff35;
+}
+
+
+/* =========================
+   NAVBAR
+========================= */
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 78px;
+
+    z-index: 1000;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 0 6vw;
+
+    background: rgba(8, 9, 9, 0.72);
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: 900;
+    letter-spacing: 5px;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #c7caca;
+    text-decoration: none;
+
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+
+    text-transform: uppercase;
+
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
+
+.nav-btn {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    padding: 12px 19px;
+
+    color: #ffffff;
+    text-decoration: none;
+
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    background: var(--accent);
+    color: #000000;
+    border-color: var(--accent);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(4, 5, 5, 0.96) 0%,
+            rgba(4, 5, 5, 0.75) 38%,
+            rgba(4, 5, 5, 0.20) 75%,
+            rgba(4, 5, 5, 0.55) 100%
+        ),
+        url("https://futurz4x4.in/cdn/shop/files/Snorkel6_11zon_1024x1024.jpg?v=1733814488")
+        center / cover no-repeat;
+}
+
+.hero::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 70%,
+            #080909 100%
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+
+    width: 100%;
+    max-width: 1350px;
+
+    margin: auto;
+
+    padding: 140px 7vw 80px;
+}
+
+.eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    color: var(--accent);
+
+    font-size: 11px;
+    letter-spacing: 3px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    margin-bottom: 28px;
+}
+
+.eyebrow::before {
+    content: "";
+
+    width: 38px;
+    height: 1px;
+
+    background: var(--accent);
+}
+
+.hero h1 {
+    max-width: 780px;
+
+    font-size: clamp(55px, 8vw, 115px);
+
+    line-height: 0.88;
+
+    letter-spacing: -5px;
+
+    text-transform: uppercase;
+
+    font-weight: 900;
+}
+
+.hero h1 span {
+    color: transparent;
+
+    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.7);
+}
+
+.hero-description {
+    max-width: 550px;
+
+    margin-top: 35px;
+
+    color: #c2c5c5;
+
+    line-height: 1.8;
+
+    font-size: 15px;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+
+    margin-top: 38px;
+}
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 15px 25px;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1.5px;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    transition: 0.3s;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #000000;
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 15px 40px rgba(214, 255, 53, 0.15);
+}
+
+.btn-outline {
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+}
+
+.btn-outline:hover {
+    background: #ffffff;
+    color: #000000;
+}
+
+.hero-stats {
+    display: flex;
+    gap: 55px;
+
+    margin-top: 80px;
+}
+
+.stat strong {
+    display: block;
+
+    font-size: 25px;
+
+    margin-bottom: 5px;
+}
+
+.stat small {
+    color: #858b8b;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   COMMON
+========================= */
+
+section {
+    padding: 120px 7vw;
+}
+
+.section-label {
+    color: var(--accent);
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    text-transform: uppercase;
+
+    font-weight: 700;
+
+    margin-bottom: 18px;
+}
+
+.section-title {
+    font-size: clamp(42px, 6vw, 82px);
+
+    line-height: 0.95;
+
+    letter-spacing: -3px;
+
+    text-transform: uppercase;
+
+    font-weight: 900;
+}
+
+.section-description {
+    max-width: 560px;
+
+    color: #929797;
+
+    line-height: 1.8;
+
+    margin-top: 25px;
+}
+
+
+/* =========================
+   ACCESSORIES
+========================= */
+
+.accessories {
+    background: #080909;
+}
+
+.accessory-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    margin-bottom: 65px;
+}
+
+.accessory-header .section-description {
+    margin: 0;
+}
+
+.product-grid {
+    display: grid;
+
+    grid-template-columns: repeat(12, 1fr);
+
+    gap: 18px;
+}
+
+.product-card {
+    position: relative;
+
+    overflow: hidden;
+
+    min-height: 480px;
+
+    background: #111414;
+
+    border: 1px solid rgba(255, 255, 255, 0.08);
+
+    grid-column: span 6;
+
+    transition: 0.5s;
+}
+
+.product-card:nth-child(3),
+.product-card:nth-child(4),
+.product-card:nth-child(5),
+.product-card:nth-child(6) {
+    grid-column: span 3;
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(214, 255, 53, 0.35);
+}
+
+.product-image {
+    position: absolute;
+
+    inset: 0;
+
+    background-size: cover;
+
+    background-position: center;
+
+    filter: grayscale(35%);
+
+    transform: scale(1.01);
+
+    transition:
+        transform 0.7s ease,
+        filter 0.7s ease;
+}
+
+.product-card:hover .product-image {
+    transform: scale(1.08);
+
+    filter: grayscale(0%);
+}
+
+.product-image::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            transparent 20%,
+            rgba(0, 0, 0, 0.25) 45%,
+            rgba(0, 0, 0, 0.95) 100%
+        );
+}
+
+
+/* Product images */
+
+.bumper {
+    background-image:
+        url("https://zelixautomotives.in/cdn/shop/files/Capture9_dc85a36f-ebae-4036-a4c8-fe6e73fbcdd0.png?v=1765013780&width=1445");
+}
+
+.sliders {
+    background-image:
+        url("https://www.fibresmith.co.in/images/products/roll-cage.jpg");
+}
+
+.roof {
+    background-image:
+        url("https://www.stellar4x4.com/assets/images/galleries/1749540533oQzA3n1m.jpg");
+}
+
+.underbody {
+    background-image:
+        url("https://www.stellar4x4.com/assets/images/galleries/1749540533oQzA3n1m.jpg");
+}
+
+.rollbar {
+    background-image:
+        url("https://productimages.withfloats.com/actual/6409a083f9362c0001c66b63.jpg");
+}
+
+.snorkel {
+    background-image:
+        url("https://futurz4x4.in/cdn/shop/files/Snorkel6_11zon_1024x1024.jpg?v=1733814488");
+}
+
+
+.product-info {
+    position: absolute;
+
+    z-index: 2;
+
+    bottom: 0;
+    left: 0;
+
+    width: 100%;
+
+    padding: 30px;
+}
+
+.product-number {
+    color: var(--accent);
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+
+    font-weight: bold;
+}
+
+.product-info h3 {
+    font-size: 27px;
+
+    line-height: 1;
+
+    text-transform: uppercase;
+
+    margin: 12px 0;
+}
+
+.product-info p {
+    max-width: 480px;
+
+    color: #b4b8b8;
+
+    font-size: 13px;
+
+    line-height: 1.65;
+}
+
+.product-link {
+    display: inline-block;
+
+    margin-top: 20px;
+
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+}
+
+.product-link span {
+    color: var(--accent);
+
+    margin-left: 8px;
+}
+
+
+/* =========================
+   FEATURE STRIP
+========================= */
+
+.feature-strip {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    border-top: 1px solid var(--line);
+
+    border-bottom: 1px solid var(--line);
+
+    margin-top: 55px;
+}
+
+.feature {
+    padding: 30px;
+
+    border-right: 1px solid var(--line);
+}
+
+.feature:last-child {
+    border-right: 0;
+}
+
+.feature strong {
+    display: block;
+
+    font-size: 13px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    margin-bottom: 8px;
+}
+
+.feature span {
+    color: #777d7d;
+
+    font-size: 11px;
+}
+
+
+/* =========================
+   ENGINEERING
+========================= */
+
+.engineering {
+    background: #101212;
+}
+
+.engineering-layout {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 90px;
+
+    align-items: center;
+}
+
+.engineering-image {
+    min-height: 620px;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.1),
+            rgba(0, 0, 0, 0.5)
+        ),
+        url("https://productimages.withfloats.com/actual/6409a083f9362c0001c66b63.jpg")
+        center / cover no-repeat;
+
+    position: relative;
+}
+
+.engineering-image::before {
+    content: "KLAERE";
+
+    position: absolute;
+
+    bottom: 30px;
+    left: 30px;
+
+    font-size: 11px;
+
+    letter-spacing: 5px;
+
+    font-weight: bold;
+}
+
+.spec-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    margin-top: 50px;
+
+    border-top: 1px solid var(--line);
+}
+
+.spec {
+    padding: 25px 0;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.spec:nth-child(odd) {
+    margin-right: 25px;
+}
+
+.spec small {
+    display: block;
+
+    color: #777;
+
+    text-transform: uppercase;
+
+    letter-spacing: 1px;
+
+    font-size: 9px;
+
+    margin-bottom: 8px;
+}
+
+.spec strong {
+    font-size: 13px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   PROCESS
+========================= */
+
+.process {
+    margin-top: 100px;
+}
+
+.process-grid {
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 15px;
+
+    margin-top: 45px;
+}
+
+.process-card {
+    min-height: 230px;
+
+    padding: 28px;
+
+    border: 1px solid var(--line);
+
+    background: #0b0d0d;
+
+    transition: 0.3s;
+}
+
+.process-card:hover {
+    background: #151919;
+
+    transform: translateY(-5px);
+}
+
+.process-number {
+    font-size: 10px;
+
+    color: var(--accent);
+
+    letter-spacing: 2px;
+}
+
+.process-card h3 {
+    margin-top: 55px;
+
+    text-transform: uppercase;
+
+    font-size: 16px;
+}
+
+.process-card p {
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    margin-top: 12px;
+}
+
+
+/* =========================
+   WHY KLAERE
+========================= */
+
+.why {
+    background: #080909;
+}
+
+.why-top {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 50px;
+}
+
+.why-top > div {
+    flex: 1;
+}
+
+.values {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    gap: 12px;
+
+    margin-top: 75px;
+}
+
+.value {
+    padding: 30px 22px;
+
+    min-height: 210px;
+
+    border: 1px solid var(--line);
+
+    transition: 0.3s;
+}
+
+.value:hover {
+    border-color: var(--accent);
+}
+
+.value-number {
+    color: #666;
+
+    font-size: 10px;
+
+    letter-spacing: 2px;
+}
+
+.value h3 {
+    margin-top: 50px;
+
+    font-size: 14px;
+
+    text-transform: uppercase;
+}
+
+.value p {
+    color: #777;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+
+    margin-top: 12px;
+}
+
+.big-statement {
+    margin-top: 120px;
+
+    padding-top: 50px;
+
+    border-top: 1px solid var(--line);
+
+    font-size: clamp(45px, 7vw, 100px);
+
+    line-height: 0.9;
+
+    text-transform: uppercase;
+
+    font-weight: 900;
+
+    letter-spacing: -5px;
+}
+
+.big-statement span {
+    color: var(--accent);
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact {
+    background: #111313;
+}
+
+.contact-layout {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 100px;
+}
+
+.contact-details {
+    margin-top: 55px;
+}
+
+.contact-item {
+    padding: 25px 0;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.contact-item small {
+    display: block;
+
+    color: #6e7373;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+
+    margin-bottom: 10px;
+}
+
+.contact-item a,
+.contact-item p {
+    color: #ffffff;
+
+    text-decoration: none;
+
+    font-size: 15px;
+}
+
+.contact-form {
+    background: #0a0c0c;
+
+    padding: 40px;
+
+    border: 1px solid var(--line);
+}
+
+.form-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+.field {
+    margin-bottom: 18px;
+}
+
+.field label {
+    display: block;
+
+    color: #737878;
+
+    font-size: 9px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 9px;
+}
+
+.field input,
+.field textarea,
+.field select {
+    width: 100%;
+
+    background: #111414;
+
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    color: #ffffff;
+
+    padding: 14px;
+
+    outline: none;
+
+    font-family: inherit;
+}
+
+.field textarea {
+    height: 130px;
+
+    resize: none;
+}
+
+.field input:focus,
+.field textarea:focus,
+.field select:focus {
+    border-color: var(--accent);
+}
+
+.submit {
+    width: 100%;
+
+    border: 0;
+
+    cursor: pointer;
+
+    background: var(--accent);
+
+    color: #000000;
+
+    padding: 17px;
+
+    font-size: 10px;
+
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   FINAL CTA
+========================= */
+
+.final-cta {
+    min-height: 65vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(0, 0, 0, 0.65),
+            rgba(0, 0, 0, 0.88)
+        ),
+        url("https://www.stellar4x4.com/assets/images/galleries/1749540533oQzA3n1m.jpg")
+        center / cover no-repeat;
+}
+
+.final-cta-content {
+    position: relative;
+
+    z-index: 2;
+}
+
+.final-cta h2 {
+    font-size: clamp(55px, 9vw, 130px);
+
+    line-height: 0.82;
+
+    letter-spacing: -6px;
+
+    text-transform: uppercase;
+
+    font-weight: 900;
+}
+
+.final-cta h2 span {
+    color: var(--accent);
+}
+
+.final-cta p {
+    max-width: 500px;
+
+    margin: 30px auto;
+
+    color: #a2a7a7;
+
+    line-height: 1.7;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 65px 7vw 30px;
+
+    background: #060707;
+}
+
+.footer-top {
+    display: grid;
+
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+
+    gap: 50px;
+
+    padding-bottom: 60px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.footer-logo {
+    font-size: 28px;
+
+    font-weight: 900;
+
+    letter-spacing: 5px;
+}
+
+.footer-logo span {
+    color: var(--accent);
+}
+
+.footer-about {
+    max-width: 300px;
+
+    color: #666c6c;
+
+    font-size: 12px;
+
+    line-height: 1.7;
+
+    margin-top: 18px;
+}
+
+.footer-column h4 {
+    font-size: 9px;
+
+    color: #777;
+
+    text-transform: uppercase;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 20px;
+}
+
+.footer-column a {
+    display: block;
+
+    color: #c7caca;
+
+    text-decoration: none;
+
+    font-size: 12px;
+
+    margin-bottom: 12px;
+}
+
+.footer-column a:hover {
+    color: var(--accent);
+}
+
+.footer-bottom {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding-top: 25px;
+
+    color: #555;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================
+   BACK TO TOP
+========================= */
+
+.top-btn {
+    position: fixed;
+
+    right: 25px;
+
+    bottom: 25px;
+
+    width: 42px;
+
+    height: 42px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: var(--accent);
+
+    color: #000000;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    z-index: 100;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1000px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .hero h1 {
+        letter-spacing: -3px;
+    }
+
+    .product-card,
+    .product-card:nth-child(3),
+    .product-card:nth-child(4),
+    .product-card:nth-child(5),
+    .product-card:nth-child(6) {
+        grid-column: span 6;
+    }
+
+    .engineering-layout,
+    .contact-layout {
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .values {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    section {
+        padding: 80px 5vw;
+    }
+
+    .navbar {
+        padding: 0 5vw;
+    }
+
+    .nav-btn {
+        display: none;
+    }
+
+    .hero-content {
+        padding: 130px 5vw 60px;
+    }
+
+    .hero h1 {
+        font-size: 55px;
+    }
+
+    .hero-stats {
+        gap: 25px;
+
+        flex-wrap: wrap;
+    }
+
+    .hero-actions {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .accessory-header,
+    .why-top {
+        display: block;
+    }
+
+    .product-card,
+    .product-card:nth-child(3),
+    .product-card:nth-child(4),
+    .product-card:nth-child(5),
+    .product-card:nth-child(6) {
+        grid-column: span 12;
+
+        min-height: 400px;
+    }
+
+    .feature-strip {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .feature {
+        border-bottom: 1px solid var(--line);
+    }
+
+    .engineering-image {
+        min-height: 420px;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .values {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-form {
+        padding: 25px;
+    }
+
+    .footer-top {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+
+        gap: 12px;
+    }
+}
